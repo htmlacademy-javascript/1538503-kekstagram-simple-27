@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм (простой)»
 
 * Студент: [Максим Попов](https://up.htmlacademy.ru/javascript/27/user/1538503).
-* Наставник: [Владимир Артюхов] (https://htmlacademy.ru/profile/artman).
+* Наставник: [Владимир Артюхов](https://htmlacademy.ru/profile/artman).
 
 ---
 
