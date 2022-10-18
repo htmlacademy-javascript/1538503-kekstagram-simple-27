@@ -10,7 +10,7 @@ function getRandomIntInclusive (min, max) {
 
 getRandomIntInclusive(1,10);
 
-const lineLenght = function (line, maxLenght) {
+const lineLenght = (line, maxLenght) => {
   if (line.length < maxLenght) {
     return true;
   }
@@ -19,4 +19,26 @@ const lineLenght = function (line, maxLenght) {
 };
 
 lineLenght('', 130 );
+
+const getRandomArrayElement = (elements) => elements[getRandomIntInclusive(0, elements.length - 1)];
+
+const ID = Array.from({length: 25}, (_, index) => index + 1);
+
+const URL = Array.from({length: 25}, (_, index) => `photos/${index + 1}.jpg`);
+
+const DESCRIPTION = ['Отличное фото', 'Мы с друзьями', 'Первые шаги Степы', 'Мамин юбилей', 'Вперед Спартак', 'Премьера фильма', 'Человек на Луне', 'Пикник в августе', 'Первая поездка на новом мотоцикле', 'Любовь и голуби'];
+
+const getPicDescribtion = function () {
+  return {
+    IDs: getRandomArrayElement(ID),
+    URLs: getRandomArrayElement(URL),
+    DESCRIPTION: getRandomArrayElement(DESCRIPTION),
+    LIKES: getRandomIntInclusive(15, 200),
+    COMMENTS: getRandomIntInclusive(0, 200)
+  };
+};
+
+const newArray = () => Array.from({length: 25}, getPicDescribtion);
+
+newArray();
 
