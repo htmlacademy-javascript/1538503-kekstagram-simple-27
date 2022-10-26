@@ -1,3 +1,3 @@
-import {genPicArray} from './data.js';
+import {generateRandomPhotos} from './data.js';
 
-genPicArray();
+generateRandomPhotos();
