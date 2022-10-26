@@ -1,3 +1,3 @@
-import {newArray} from './data.js';
+import {genPicArray} from './data.js';
 
-newArray();
+genPicArray();

@@ -15,10 +15,8 @@ const getPicDescribtion = () => ({
   comments: getRandomIntInclusive(0, 200)
 });
 
-const newArray = () => Array.from({length: 25}, getPicDescribtion);
+const genPicArray = () => Array.from({length: 25}, getPicDescribtion);
 
-newArray();
+export {getPicDescribtion, genPicArray};
 
-export {newArray};
-export {getPicDescribtion};
 
