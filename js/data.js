@@ -15,8 +15,6 @@ const getPicDescribtion = () => ({
   comments: getRandomIntInclusive(0, 200)
 });
 
-const generateRandomPhotos = () => Array.from({length: 25}, getPicDescribtion);
+const generateRandomPhotos = (count) => Array.from({length: count}, getPicDescribtion);
 
 export {getPicDescribtion, generateRandomPhotos};
-
-

@@ -1,3 +1,3 @@
-import {generateRandomPhotos} from './data.js';
+import {displayRandomPhotos} from './random-thumbnail.js';
 
-generateRandomPhotos();
+displayRandomPhotos();
