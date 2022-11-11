@@ -8,14 +8,17 @@ const generatedPhotos = generateRandomPhotos(25);
 
 const randomPhotoFragment = document.createDocumentFragment();
 
-generatedPhotos.forEach((photo) => {
-  const randomPhoto = pictureTemplate.cloneNode(true);
-  randomPhoto.querySelector('.picture__img').src = photo.url;
-  randomPhoto.querySelector('.picture__likes').textContent = photo.likes;
-  randomPhoto.querySelector('.picture__comments').textContent = photo.comments;
-  randomPhotoFragment.append(randomPhoto);
-});
+const displayRandomPhotos = () => {
+  generatedPhotos.forEach((photo) => {
+    const randomPhoto = pictureTemplate.cloneNode(true);
+    randomPhoto.querySelector('.picture__img').src = photo.url;
+    randomPhoto.querySelector('.picture__likes').textContent = photo.likes;
+    randomPhoto.querySelector('.picture__comments').textContent = photo.comments;
+    randomPhotoFragment.append(randomPhoto);
+  });
 
-gallery.append(randomPhotoFragment);
+  gallery.append(randomPhotoFragment);
+};
 
+export {displayRandomPhotos};
 

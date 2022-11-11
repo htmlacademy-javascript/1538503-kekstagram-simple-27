@@ -18,5 +18,3 @@ const getPicDescribtion = () => ({
 const generateRandomPhotos = (count) => Array.from({length: count}, getPicDescribtion);
 
 export {getPicDescribtion, generateRandomPhotos};
-
-
