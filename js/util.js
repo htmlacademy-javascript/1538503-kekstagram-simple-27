@@ -6,8 +6,11 @@ const getRandomIntInclusive = ((min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 });
 
-const isAllowableLenght = (line, maxLenght) => line.length < maxLenght;
+const minCommentLength = 20;
+const maxCommentLenght = 140;
+
+const isAllowableLenght = (line) => line.length >= minCommentLength && line.length <= maxCommentLenght;
 
 const getRandomArrayElement = (elements) => elements[getRandomIntInclusive(0, elements.length - 1)];
 
-export {getRandomArrayElement, getRandomIntInclusive, isAllowableLenght};
+export {getRandomArrayElement, getRandomIntInclusive, isAllowableLenght, minCommentLength, maxCommentLenght};
