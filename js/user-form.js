@@ -8,13 +8,13 @@ const userForm = document.querySelector('.img-upload__form');
 
 const modalCloseButton = document.querySelector('.img-upload__cancel');
 
-const pristine = new Pristine(userForm, {
+const pristine = new Pristine(userForm,{
   classTo: 'img-upload__text',
   errorClass: 'textdescription--invalid',
   successClass: 'textdescription--valid',
   errorTextParent: 'img-upload__text',
   errorTextTag: 'div',
-  errorTextClass: 'textdescription__error'
+  errorTextClass: 'textdescription__error',
 });
 
 const onModalEscKeydown = (evt) => {
@@ -44,11 +44,12 @@ const openModal = () => {
 };
 
 const uploadPhoto = () =>
-  fileSelect.addEventListener('change', () => {
-    openModal();
-  });
+  fileSelect.addEventListener('change',openModal);
 
-pristine.addValidator(userForm.querySelector('.textdescription'), isAllowableLenght, 'От 20 до 140 символов');
+pristine.addValidator(
+  userForm.querySelector('.text__description'),
+  isAllowableLenght,
+  'От 20 до 140 символов');
 
 userForm.addEventListener('submit', (evt) => {
   const isValid = pristine.validate();
@@ -58,3 +59,5 @@ userForm.addEventListener('submit', (evt) => {
 });
 
 export {uploadPhoto};
+
+
