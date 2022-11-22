@@ -38,7 +38,7 @@ const closeModal = () => {
 const openModal = () => {
   popup.classList.remove('hidden');
   document.querySelector('body').classList.add('modal-open');
-
+  userForm.querySelector('.text__description').textContent = '';
   document.addEventListener('keydown', onModalEscKeydown);
   modalCloseButton.addEventListener('click', closeModal);
 };
