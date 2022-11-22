@@ -46,10 +46,12 @@ const openModal = () => {
 const uploadPhoto = () =>
   fileSelect.addEventListener('change',openModal);
 
-pristine.addValidator(
-  userForm.querySelector('.text__description'),
-  isAllowableLenght,
-  'От 20 до 140 символов');
+const formValidate = () => {
+  pristine.addValidator(
+    userForm.querySelector('.text__description'),
+    isAllowableLenght,
+    'От 20 до 140 символов');
+};
 
 userForm.addEventListener('submit', (evt) => {
   const isValid = pristine.validate();
@@ -58,6 +60,6 @@ userForm.addEventListener('submit', (evt) => {
   }
 });
 
-export {uploadPhoto};
+export {uploadPhoto, formValidate};
 
 
