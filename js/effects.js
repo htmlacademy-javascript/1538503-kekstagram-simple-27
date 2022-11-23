@@ -7,6 +7,6 @@ const onChangeImageFilters = (evt) => {
   uploadPreview.classList.add(`effects__preview--${filterName}`);
 };
 
-const editImagePreview = () => userForm.addEventListener('change', onChangeImageFilters);
+const setChangeImageFilters = () => userForm.addEventListener('change', onChangeImageFilters);
 
-export {editImagePreview};
+export {setChangeImageFilters};
