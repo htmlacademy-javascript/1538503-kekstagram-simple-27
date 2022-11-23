@@ -37,4 +37,10 @@ const addScaleHandler = () => {
   scaleUpButton.addEventListener('click', scaleUp);
 };
 
-addScaleHandler();
+const removeScaleHandler = () => {
+  scaleDownButton.removeEventListener('click', scaleDown);
+  scaleUpButton.removeEventListener('click', scaleUp);
+  imagePreview.style = 'transform: scale(1)';
+};
+
+export {addScaleHandler, removeScaleHandler};

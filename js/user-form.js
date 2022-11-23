@@ -1,4 +1,5 @@
 import {isAllowableLenght} from './util.js';
+import {addScaleHandler,removeScaleHandler} from './photo-editing.js';
 
 const fileSelect = document.querySelector('.img-upload__input');
 
@@ -33,6 +34,7 @@ const closeModal = () => {
 
   document.removeEventListener('keydown', onModalEscKeydown);
   modalCloseButton.removeEventListener('click', closeModal);
+  removeScaleHandler();
 };
 
 const openModal = () => {
@@ -41,6 +43,7 @@ const openModal = () => {
   userForm.querySelector('.text__description').textContent = '';
   document.addEventListener('keydown', onModalEscKeydown);
   modalCloseButton.addEventListener('click', closeModal);
+  addScaleHandler();
 };
 
 const uploadPhoto = () =>
@@ -60,6 +63,6 @@ userForm.addEventListener('submit', (evt) => {
   }
 });
 
-export {uploadPhoto, formValidate};
+export {uploadPhoto, formValidate, userForm};
 
 
