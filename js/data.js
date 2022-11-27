@@ -1,13 +1,15 @@
 import {getRandomArrayElement} from './util.js';
 import {getRandomIntInclusive} from './util.js';
 
-const IDs = Array.from({length: 25}, (_, index) => index + 1);
+const ELEMENTS_COUNT = 25;
 
-const ImageURLs = Array.from({length: 25}, (_, index) => `photos/${index + 1}.jpg`);
+const IDs = Array.from({length: ELEMENTS_COUNT}, (_, index) => index + 1);
 
-const DESCRIPTIONS = ['Отличное фото', 'Мы с друзьями', 'Первые шаги Степы', 'Мамин юбилей', 'Вперед Спартак', 'Премьера фильма', 'Человек на Луне', 'Пикник в августе', 'Первая поездка на новом мотоцикле', 'Любовь и голуби'];
+const ImageURLs = Array.from({length: ELEMENTS_COUNT}, (_, index) => `photos/${index + 1}.jpg`);
 
-const getPicDescribtion = () => ({
+const DESCRIPTIONS = ['Отличное фото', 'Мы с друзьями', 'Первые шаги Степы', 'Мамин юбилей', 'Вперед Спартак!', 'Премьера фильма', 'Человек на Луне', 'Пикник в августе', 'Первая поездка на новом мотоцикле', 'Любовь и голуби'];
+
+const getPictureDescribtion = () => ({
   id: getRandomArrayElement(IDs),
   url: getRandomArrayElement(ImageURLs),
   description: getRandomArrayElement(DESCRIPTIONS),
@@ -15,6 +17,6 @@ const getPicDescribtion = () => ({
   comments: getRandomIntInclusive(0, 200)
 });
 
-const generateRandomPhotos = (count) => Array.from({length: count}, getPicDescribtion);
+const generateRandomPhotos = () => Array.from({length: ELEMENTS_COUNT}, getPictureDescribtion);
 
-export {getPicDescribtion, generateRandomPhotos};
+export {getPictureDescribtion, generateRandomPhotos};
