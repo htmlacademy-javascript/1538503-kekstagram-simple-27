@@ -1,14 +1,10 @@
-import {generateRandomPhotos} from './data.js';
-
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 const gallery = document.querySelector('.pictures');
 
-const generatedPhotos = generateRandomPhotos(25);
-
 const randomPhotoFragment = document.createDocumentFragment();
 
-const displayRandomPhotos = () => {
+const displayRandomPhotos = (generatedPhotos) => {
   generatedPhotos.forEach((photo) => {
     const randomPhoto = pictureTemplate.cloneNode(true);
     randomPhoto.querySelector('.picture__img').src = photo.url;

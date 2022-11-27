@@ -1,5 +1,6 @@
-import {userForm} from './user-form.js';
 const uploadPreview = document.querySelector('.img-upload__preview');
+
+const imgFiltersFieldset = document.querySelector('.img-upload__effects');
 
 const onChangeImageFilters = (evt) => {
   const filterName = evt.target.value;
@@ -7,6 +8,11 @@ const onChangeImageFilters = (evt) => {
   uploadPreview.classList.add(`effects__preview--${filterName}`);
 };
 
-const editImagePreview = () => userForm.addEventListener('change', onChangeImageFilters);
+const setChangeImageFilters = () => imgFiltersFieldset.addEventListener('change', onChangeImageFilters);
 
-export {editImagePreview};
+const cancelChaneImageFilters = () => {
+  uploadPreview.className = 'img-upload__preview';
+  imgFiltersFieldset.removeEventListener('change', onChangeImageFilters);
+};
+
+export {onChangeImageFilters, cancelChaneImageFilters, setChangeImageFilters};
