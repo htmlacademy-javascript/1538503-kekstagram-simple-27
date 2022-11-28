@@ -34,7 +34,8 @@ const onModalEscKeydown = (evt) => {
     document.querySelector('body').classList.remove('modal-open');
     fileSelect.value = '';
     removeScaleHandler();
-    setChangeImageFilters();
+    cancelChaneImageFilters();
+    userForm.reset();
   }
 };
 
@@ -136,10 +137,12 @@ const addErrorMessage = () => {
   const onErrorMessageEscKeyDown = (evt) => {
     if (evt.key === 'Escape') {
       evt.preventDefault();
+      document.addEventListener('keydown', onModalEscKeydown);
       errorMessage.remove();
     }
   };
 
+  document.removeEventListener('keydown', onModalEscKeydown);
   document.addEventListener('keydown', onErrorMessageEscKeyDown);
 
   document.onclick = function (evt) {
